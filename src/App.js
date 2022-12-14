@@ -7,7 +7,7 @@ const MESSAGE = require("./view/view.constants");
 
 class App {
   constructor() {
-    this.computer = new Computer();
+    this.computer = new Computer().getResult();
   }
 
   play() {
@@ -16,12 +16,14 @@ class App {
   }
 
   #inputBaseBallNumCallback = (num) => {
-    this.num = new BaseBallNum(num);
-    const result = new BaseBallResult(
-      this.computer.getNum(),
-      this.num.getNum()
-    ).getResult();
-    OutputView.printResult(this.#makeResultView(result));
+    this.num = new BaseBallNum(num).getResult();
+    const result = new BaseBallResult(this.computer, this.num);
+    OutputView.printResult(this.#makeResultView(result.getResult()));
+    if (result.isGameEnd()) {
+      OutputView.printEnd();
+      return;
+    }
+    this.inputBaseBallNum();
   };
 
   inputBaseBallNum() {
