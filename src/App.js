@@ -22,9 +22,8 @@ class App {
   }
 
   #inputBaseBallNumCallback = (num) => {
-    this.num = new BaseBallNum(num).getResult();
-    const result = new BaseBallResult(this.computer, this.num);
-    console.log(this.computer);
+    const baseballNum = new BaseBallNum(num).getResult();
+    const result = new BaseBallResult(this.computer, baseballNum);
     OutputView.printResult(this.#makeResultView(result.getResult()));
     if (result.isGameEnd()) {
       OutputView.printEnd();
