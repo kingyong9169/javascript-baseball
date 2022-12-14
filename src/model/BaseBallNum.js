@@ -28,7 +28,7 @@ class BaseBallNum {
     return this.#baseValidate(num.length === 3);
   }
 
-  getNum() {
+  getResult() {
     return this.num;
   }
 }
