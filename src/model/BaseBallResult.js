@@ -12,6 +12,10 @@ class BaseBallResult {
     }, result);
   }
 
+  isGameEnd() {
+    return this.result.strike === 3;
+  }
+
   getResult() {
     return this.result;
   }
