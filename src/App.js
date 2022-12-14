@@ -9,12 +9,16 @@ const InValidInputError = require("./error/InValidInputError");
 
 class App {
   constructor() {
-    this.computer = new Computer().getResult();
+    this.initializeComputer();
   }
 
   play() {
     OutputView.printStart();
-    this.inputBaseBallNum();
+    this.#inputBaseBallNum();
+  }
+
+  initializeComputer() {
+    this.computer = new Computer().getResult();
   }
 
   #inputBaseBallNumCallback = (num) => {
@@ -46,8 +50,8 @@ class App {
     if (command !== "1" && command !== "2")
       throw new InValidInputError(ERROR_MESSAGE.INVALID_GAME_COMMAND);
     if (command === "1") {
-      this.computer = new Computer().getResult();
-      this.inputBaseBallNum();
+      this.initializeComputer();
+      this.#inputBaseBallNum();
       return;
     }
     InputView.close();
