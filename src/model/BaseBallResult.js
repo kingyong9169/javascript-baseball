@@ -11,6 +11,10 @@ class BaseBallResult {
       return acc;
     }, result);
   }
+
+  getResult() {
+    return this.result;
+  }
 }
 
 module.exports = BaseBallResult;
