@@ -13,6 +13,10 @@ const OutputView = {
     Console.print(MESSAGE.GAME_START);
   },
 
+  printEnd() {
+    Console.print(MESSAGE.GAME_WIN);
+  },
+
   printError(error) {
     Console.print(error);
   },
