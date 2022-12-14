@@ -21,15 +21,15 @@ class BaseBallNum {
   }
 
   #isValidNum(num) {
-    this.#baseValidate(/^[1-9]+$/.test(num));
+    return this.#baseValidate(/^[1-9]+$/.test(num));
   }
 
   #isValidDifferentNum(num) {
-    this.#baseValidate(new Set([...num]).size === num.length);
+    return this.#baseValidate(new Set([...num]).size === 3);
   }
 
   #isValidNumSize(num) {
-    this.#baseValidate(num.length === 3);
+    return this.#baseValidate(num.length === 3);
   }
 
   getNum() {
