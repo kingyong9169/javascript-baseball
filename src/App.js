@@ -1,7 +1,9 @@
 const Computer = require("./model/Computer");
 const BaseBallNum = require("./model/BaseBallNum");
+const BaseBallResult = require("./model/BaseBallResult");
 const InputView = require("./view/InputView");
 const OutputView = require("./view/OutputView");
+const MESSAGE = require("./view/view.constants");
 
 class App {
   constructor() {
@@ -19,6 +21,14 @@ class App {
 
   inputBaseBallNum() {
     InputView.readBaseBallNum(this.#inputBaseBallNumCallback);
+  }
+
+  #makeResultView(result) {
+    const { strike, ball } = result;
+    if (!strike && !ball) return MESSAGE.BASEBALL.NOTHING;
+    if (!strike) return `${ball}볼`;
+    if (!ball) return `${strike}스트라이크`;
+    return `${ball}볼 ${strike}스트라이크`;
   }
 }
 
