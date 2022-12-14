@@ -14,6 +14,6 @@ describe("BaseBallNum 테스트", () => {
   });
 
   test("입력한 수가 서로 다른 3자리 숫자이다.", () => {
-    expect(new BaseBallNum("123").getNum()).toBe("123");
+    expect(new BaseBallNum("123").getResult()).toBe("123");
   });
 });
