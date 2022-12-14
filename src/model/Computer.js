@@ -13,10 +13,10 @@ class Computer {
         computer.push(number);
       }
     }
-    return computer;
+    return computer.join("");
   }
 
-  getNum() {
+  getResult() {
     return this.num;
   }
 }
