@@ -10,7 +10,7 @@ const InputView = {
   },
 
   readGameCommand(callback) {
-    Console.readLine(MESSAGE.GAME_WIN, callback);
+    Console.readLine(MESSAGE.GAME_COMMAND, callback);
   },
 
   close() {
