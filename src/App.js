@@ -16,7 +16,12 @@ class App {
   }
 
   #inputBaseBallNumCallback = (num) => {
-    this.input = new BaseBallNum(num);
+    this.num = new BaseBallNum(num);
+    const result = new BaseBallResult(
+      this.computer.getNum(),
+      this.num.getNum()
+    ).getResult();
+    OutputView.printResult(this.#makeResultView(result));
   };
 
   inputBaseBallNum() {
